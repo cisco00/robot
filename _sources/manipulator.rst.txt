@@ -1,0 +1,20 @@
+Manipulator
+===========
+
+.. automodule:: ivy_robot.manipulator
+    :members:
+    :special-members: __init__
+    :undoc-members:
+    :show-inheritance:
+
+
+.. toctree::
+   :maxdepth: -1
+   :caption: Manipulator
+
+   manipulator/Manipulator:
+
+    def __init__.rst
+   manipulator/MicoManipulator.rst
+   manipulator/PandaManipulator.rst
+

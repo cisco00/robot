@@ -1,0 +1,18 @@
+Rigid mobile
+============
+
+.. automodule:: ivy_robot.rigid_mobile
+    :members:
+    :special-members: __init__
+    :undoc-members:
+    :show-inheritance:
+
+
+.. toctree::
+   :maxdepth: -1
+   :caption: Rigid mobile
+
+   rigid_mobile/RigidMobile:
+
+    def __init__.rst
+
