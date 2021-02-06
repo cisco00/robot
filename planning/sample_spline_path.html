@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>MicoManipulator &mdash; Ivy Robot 1.0 documentation</title>
+  <title>sample_spline_path &mdash; Ivy Robot 1.0 documentation</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="PandaManipulator" href="PandaManipulator.html" />
-    <link rel="prev" title="Manipulator" href="../manipulator.html" /> 
+    <link rel="next" title="Rigid mobile" href="../rigid_mobile.html" />
+    <link rel="prev" title="Planning" href="../planning.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -82,12 +82,11 @@
             
               <p class="caption"><span class="caption-text">Modules</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../manipulator.html">Manipulator</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">MicoManipulator</a></li>
-<li class="toctree-l2"><a class="reference internal" href="PandaManipulator.html">PandaManipulator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manipulator.html">Manipulator</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../planning.html">Planning</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">sample_spline_path</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../planning.html">Planning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../rigid_mobile.html">Rigid mobile</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Docs</span></p>
@@ -142,15 +141,15 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../manipulator.html">Manipulator</a> &raquo;</li>
+          <li><a href="../planning.html">Planning</a> &raquo;</li>
         
-      <li>MicoManipulator</li>
+      <li>sample_spline_path</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/manipulator/MicoManipulator.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/planning/sample_spline_path.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -163,29 +162,27 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="micomanipulator">
-<h1>MicoManipulator<a class="headerlink" href="#micomanipulator" title="Permalink to this headline">¶</a></h1>
-<dl class="py class">
-<dt id="ivy_robot.manipulator.MicoManipulator">
-<em class="property">class </em><code class="sig-prename descclassname">ivy_robot.</code><code class="sig-name descname">MicoManipulator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span></em>, <em class="sig-param"><span class="n">base_inv_ext_mat</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ivy_robot/manipulator.html#MicoManipulator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ivy_robot.manipulator.MicoManipulator" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="../manipulator.html#ivy_robot.manipulator.Manipulator" title="ivy_robot.manipulator.Manipulator"><code class="xref py py-class docutils literal notranslate"><span class="pre">ivy_robot.manipulator.Manipulator</span></code></a></p>
-<dl class="py method">
-<dt id="ivy_robot.manipulator.MicoManipulator.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span></em>, <em class="sig-param"><span class="n">base_inv_ext_mat</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ivy_robot/manipulator.html#MicoManipulator.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ivy_robot.manipulator.MicoManipulator.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize Kinova Mico robot manipulator instance.
-Denavit–Hartenberg parameters inferred from KINOVA_MICO_Robotic_arm_user_guide.pdf
-Joint scales and offsets inferred from JACO²-6DOF-Advanced-Specification-Guide.pdf
-Both of these PDFs are included in this module for reference</p>
+  <div class="section" id="sample-spline-path">
+<h1>sample_spline_path<a class="headerlink" href="#sample-spline-path" title="Permalink to this headline">¶</a></h1>
+<dl class="py function">
+<dt id="ivy_robot.planning.sample_spline_path">
+<code class="sig-prename descclassname">ivy_robot.planning.</code><code class="sig-name descname">sample_spline_path</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">anchor_points</span></em>, <em class="sig-param"><span class="n">anchor_vals</span></em>, <em class="sig-param"><span class="n">sample_points</span></em>, <em class="sig-param"><span class="n">order</span><span class="o">=</span><span class="default_value">3</span></em>, <em class="sig-param"><span class="n">f</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ivy_robot/planning.html#sample_spline_path"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ivy_robot.planning.sample_spline_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sample spline path, given sample locations, for path defined by the anchor locations and points.
+<a class="reference external" href="https://github.com/tensorflow/addons/blob/v0.11.2/tensorflow_addons/image/interpolate_spline.py">[reference]</a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>f</strong> (<em>ml_framework</em>) – Machine learning framework</p></li>
-<li><p><strong>base_inv_mat</strong> (<em>array</em><em>, </em><em>optional</em>) – Inverse extrinsic matrix of the robot base <em>[3,4]</em></p></li>
+<li><p><strong>anchor_points</strong> (<em>array</em>) – Anchor locations between 0-1 (regular spacing not necessary) <em>[batch_shape,num_anchors,1]</em></p></li>
+<li><p><strong>anchor_vals</strong> (<em>array</em>) – Anchor points along the spline path, in path space <em>[batch_shape,num_anchors,path_dim]</em></p></li>
+<li><p><strong>sample_points</strong> (<em>array</em>) – Sample locations between 0-1 <em>[batch_shape,num_samples,1]</em></p></li>
+<li><p><strong>order</strong> (<em>float</em>) – Order of the spline path interpolation</p></li>
+<li><p><strong>f</strong> (<em>ml_framework</em><em>, </em><em>optional</em>) – Machine learning library. Inferred from inputs if None.</p></li>
 </ul>
 </dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Spline path sampled at sample_locations, giving points in path space <em>[batch_shape,num_samples,path_dim]</em></p>
+</dd>
 </dl>
-</dd></dl>
-
 </dd></dl>
 
 <div class="line-block">
@@ -203,10 +200,10 @@ Both of these PDFs are included in this module for reference</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="PandaManipulator.html" class="btn btn-neutral float-right" title="PandaManipulator" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../rigid_mobile.html" class="btn btn-neutral float-right" title="Rigid mobile" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../manipulator.html" class="btn btn-neutral float-left" title="Manipulator" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../planning.html" class="btn btn-neutral float-left" title="Planning" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

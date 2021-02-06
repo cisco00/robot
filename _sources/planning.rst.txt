@@ -1,0 +1,16 @@
+Planning
+========
+
+.. automodule:: ivy_robot.planning
+    :members:
+    :special-members: __init__
+    :undoc-members:
+    :show-inheritance:
+
+
+.. toctree::
+   :maxdepth: -1
+   :caption: Planning
+
+   planning/sample_spline_path.rst
+

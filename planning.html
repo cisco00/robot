@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Python Module Index &mdash; Ivy Robot 1.0 documentation</title>
+  <title>Planning &mdash; Ivy Robot 1.0 documentation</title>
   
 
   
@@ -35,9 +35,8 @@
   <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
- 
-
-
+    <link rel="next" title="sample_spline_path" href="planning/sample_spline_path.html" />
+    <link rel="prev" title="PandaManipulator" href="manipulator/PandaManipulator.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -82,9 +81,12 @@
             
             
               <p class="caption"><span class="caption-text">Modules</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="manipulator.html">Manipulator</a></li>
-<li class="toctree-l1"><a class="reference internal" href="planning.html">Planning</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Planning</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="planning/sample_spline_path.html">sample_spline_path</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="rigid_mobile.html">Rigid mobile</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Docs</span></p>
@@ -139,10 +141,14 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Python Module Index</li>
+      <li>Planning</li>
     
     
       <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/planning.rst.txt" rel="nofollow"> View page source</a>
+          
         
       </li>
     
@@ -154,45 +160,52 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
+  <div class="section" id="module-ivy_robot.planning">
+<span id="planning"></span><h1>Planning<a class="headerlink" href="#module-ivy_robot.planning" title="Permalink to this headline">¶</a></h1>
+<p>Spline path sampling functions, useful for differentiable continuous robot path planning.</p>
+<dl class="py function">
+<dt id="ivy_robot.planning.sample_spline_path">
+<code class="sig-prename descclassname">ivy_robot.planning.</code><code class="sig-name descname">sample_spline_path</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">anchor_points</span></em>, <em class="sig-param"><span class="n">anchor_vals</span></em>, <em class="sig-param"><span class="n">sample_points</span></em>, <em class="sig-param"><span class="n">order</span><span class="o">=</span><span class="default_value">3</span></em>, <em class="sig-param"><span class="n">f</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ivy_robot/planning.html#sample_spline_path"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ivy_robot.planning.sample_spline_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sample spline path, given sample locations, for path defined by the anchor locations and points.
+<a class="reference external" href="https://github.com/tensorflow/addons/blob/v0.11.2/tensorflow_addons/image/interpolate_spline.py">[reference]</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>anchor_points</strong> (<em>array</em>) – Anchor locations between 0-1 (regular spacing not necessary) <em>[batch_shape,num_anchors,1]</em></p></li>
+<li><p><strong>anchor_vals</strong> (<em>array</em>) – Anchor points along the spline path, in path space <em>[batch_shape,num_anchors,path_dim]</em></p></li>
+<li><p><strong>sample_points</strong> (<em>array</em>) – Sample locations between 0-1 <em>[batch_shape,num_samples,1]</em></p></li>
+<li><p><strong>order</strong> (<em>float</em>) – Order of the spline path interpolation</p></li>
+<li><p><strong>f</strong> (<em>ml_framework</em><em>, </em><em>optional</em>) – Machine learning library. Inferred from inputs if None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Spline path sampled at sample_locations, giving points in path space <em>[batch_shape,num_samples,path_dim]</em></p>
+</dd>
+</dl>
+</dd></dl>
 
-   <h1>Python Module Index</h1>
-
-   <div class="modindex-jumpbox">
-   <a href="#cap-i"><strong>i</strong></a>
-   </div>
-
-   <table class="indextable modindextable">
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-i"><td></td><td>
-       <strong>i</strong></td><td></td></tr>
-     <tr>
-       <td><img src="_static/minus.png" class="toggler"
-              id="toggle-1" style="display: none" alt="-" /></td>
-       <td>
-       <code class="xref">ivy_robot</code></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="manipulator.html#module-ivy_robot.manipulator"><code class="xref">ivy_robot.manipulator</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="planning.html#module-ivy_robot.planning"><code class="xref">ivy_robot.planning</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="rigid_mobile.html#module-ivy_robot.rigid_mobile"><code class="xref">ivy_robot.rigid_mobile</code></a></td><td>
-       <em></em></td></tr>
-   </table>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Planning</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="planning/sample_spline_path.html">sample_spline_path</a></li>
+</ul>
+</div>
+</div>
 
 
            </div>
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="planning/sample_spline_path.html" class="btn btn-neutral float-right" title="sample_spline_path" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="manipulator/PandaManipulator.html" class="btn btn-neutral float-left" title="PandaManipulator" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
