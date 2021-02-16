@@ -94,6 +94,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../mech"">Ivy Mech</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../vision"">Ivy Vision</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../robot"">Ivy Robot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../memory"">Ivy Memory</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../gym"">Ivy Gym</a></li>
 </ul>
 
@@ -164,11 +165,11 @@
 <p>Rigid Mobile class, containing functions for sampling rigid mobile robots</p>
 <dl class="py class">
 <dt id="ivy_robot.rigid_mobile.RigidMobile">
-<em class="property">class </em><code class="sig-prename descclassname">ivy_robot.</code><code class="sig-name descname">RigidMobile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">rel_body_points</span></em>, <em class="sig-param"><span class="n">f</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ivy_robot/rigid_mobile.html#RigidMobile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ivy_robot.rigid_mobile.RigidMobile" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname">ivy_robot.</code><code class="sig-name descname"><span class="pre">RigidMobile</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rel_body_points</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ivy_robot/rigid_mobile.html#RigidMobile"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy_robot.rigid_mobile.RigidMobile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="py method">
 <dt id="ivy_robot.rigid_mobile.RigidMobile.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">rel_body_points</span></em>, <em class="sig-param"><span class="n">f</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ivy_robot/rigid_mobile.html#RigidMobile.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ivy_robot.rigid_mobile.RigidMobile.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rel_body_points</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ivy_robot/rigid_mobile.html#RigidMobile.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy_robot.rigid_mobile.RigidMobile.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize rigid mobile robot instance</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -182,7 +183,7 @@
 
 <dl class="py method">
 <dt id="ivy_robot.rigid_mobile.RigidMobile.sample_body">
-<code class="sig-name descname">sample_body</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">inv_ext_mats</span></em>, <em class="sig-param"><span class="n">batch_shape</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ivy_robot/rigid_mobile.html#RigidMobile.sample_body"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ivy_robot.rigid_mobile.RigidMobile.sample_body" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">sample_body</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inv_ext_mats</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ivy_robot/rigid_mobile.html#RigidMobile.sample_body"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy_robot.rigid_mobile.RigidMobile.sample_body" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sample links of the robot at uniformly distributed cartesian positions.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
