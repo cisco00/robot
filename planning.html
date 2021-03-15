@@ -166,8 +166,8 @@
 <p>Spline path sampling functions, useful for differentiable continuous robot path planning.</p>
 <dl class="py function">
 <dt id="ivy_robot.planning.sample_spline_path">
-<code class="sig-prename descclassname"><span class="pre">ivy_robot.planning.</span></code><code class="sig-name descname"><span class="pre">sample_spline_path</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">anchor_points</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">anchor_vals</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_points</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ivy_robot/planning.html#sample_spline_path"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy_robot.planning.sample_spline_path" title="Permalink to this definition">¶</a></dt>
-<dd><p>Sample spline path, given sample locations, for path defined by the anchor locations and points.
+<code class="sig-prename descclassname"><span class="pre">ivy_robot.planning.</span></code><code class="sig-name descname"><span class="pre">sample_spline_path</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">anchor_points</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">anchor_vals</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_points</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ivy_robot/planning.html#sample_spline_path"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy_robot.planning.sample_spline_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sample spline path, given sample locations for path defined by the anchor locations and points.
 <a class="reference external" href="https://github.com/tensorflow/addons/blob/v0.11.2/tensorflow_addons/image/interpolate_spline.py">[reference]</a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -176,7 +176,6 @@
 <li><p><strong>anchor_vals</strong> (<em>array</em>) – Anchor points along the spline path, in path space <em>[batch_shape,num_anchors,path_dim]</em></p></li>
 <li><p><strong>sample_points</strong> (<em>array</em>) – Sample locations between 0-1 <em>[batch_shape,num_samples,1]</em></p></li>
 <li><p><strong>order</strong> (<em>float</em>) – Order of the spline path interpolation</p></li>
-<li><p><strong>f</strong> (<em>ml_framework</em><em>, </em><em>optional</em>) – Machine learning library. Inferred from inputs if None.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>

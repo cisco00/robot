@@ -161,27 +161,24 @@
 
 <span class="c1"># global</span>
 <span class="kn">import</span> <span class="nn">ivy_mech</span>
-<span class="kn">from</span> <span class="nn">ivy.framework_handler</span> <span class="k">import</span> <span class="n">get_framework</span> <span class="k">as</span> <span class="n">_get_framework</span>
+<span class="kn">import</span> <span class="nn">ivy</span> <span class="k">as</span> <span class="nn">_ivy</span>
 
 <span class="n">MIN_DENOMINATOR</span> <span class="o">=</span> <span class="mf">1e-12</span>
 
 
 <div class="viewcode-block" id="RigidMobile"><a class="viewcode-back" href="../../rigid_mobile.html#ivy_robot.rigid_mobile.RigidMobile">[docs]</a><span class="k">class</span> <span class="nc">RigidMobile</span><span class="p">:</span>
 
-<div class="viewcode-block" id="RigidMobile.__init__"><a class="viewcode-back" href="../../rigid_mobile.html#ivy_robot.rigid_mobile.RigidMobile.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rel_body_points</span><span class="p">,</span> <span class="n">f</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="RigidMobile.__init__"><a class="viewcode-back" href="../../rigid_mobile.html#ivy_robot.rigid_mobile.RigidMobile.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rel_body_points</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Initialize rigid mobile robot instance</span>
 
 <span class="sd">        :param rel_body_points: Relative body points *[num_body_points,3]*</span>
 <span class="sd">        :type rel_body_points: array</span>
-<span class="sd">        :param f: Machine learning framework. Inferred from inputs if None.</span>
-<span class="sd">        :type f: ml_framework, optional</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_f</span> <span class="o">=</span> <span class="n">_get_framework</span><span class="p">(</span><span class="n">rel_body_points</span><span class="p">,</span> <span class="n">f</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
 
         <span class="c1"># 4 x NBP</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_rel_body_points_homo_trans</span> <span class="o">=</span>\
-            <span class="n">f</span><span class="o">.</span><span class="n">swapaxes</span><span class="p">(</span><span class="n">ivy_mech</span><span class="o">.</span><span class="n">make_coordinates_homogeneous</span><span class="p">(</span><span class="n">rel_body_points</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span></div>
+            <span class="n">_ivy</span><span class="o">.</span><span class="n">swapaxes</span><span class="p">(</span><span class="n">ivy_mech</span><span class="o">.</span><span class="n">make_coordinates_homogeneous</span><span class="p">(</span><span class="n">rel_body_points</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span></div>
 
     <span class="c1"># Public Methods #</span>
     <span class="c1"># ---------------#</span>
@@ -204,10 +201,10 @@
         <span class="n">batch_shape</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">batch_shape</span><span class="p">)</span>
 
         <span class="c1"># (BSx3) x NBP</span>
-        <span class="n">body_points_trans</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_f</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_f</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">inv_ext_mats</span><span class="p">,</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)),</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rel_body_points_homo_trans</span><span class="p">)</span>
+        <span class="n">body_points_trans</span> <span class="o">=</span> <span class="n">_ivy</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">_ivy</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">inv_ext_mats</span><span class="p">,</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)),</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rel_body_points_homo_trans</span><span class="p">)</span>
 
         <span class="c1"># BS x NBP x 3</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_f</span><span class="o">.</span><span class="n">swapaxes</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_f</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">body_points_trans</span><span class="p">,</span> <span class="n">batch_shape</span> <span class="o">+</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]),</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span></div></div>
+        <span class="k">return</span> <span class="n">_ivy</span><span class="o">.</span><span class="n">swapaxes</span><span class="p">(</span><span class="n">_ivy</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">body_points_trans</span><span class="p">,</span> <span class="n">batch_shape</span> <span class="o">+</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]),</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span></div></div>
 </pre></div>
 
            </div>
