@@ -344,7 +344,7 @@ but this time with a self-rotation of 180 degrees about the z-axis.</p>
                            <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.</span><span class="p">]])</span>
 
 <span class="c1"># create drone as ivy rigid mobile robot</span>
-<span class="n">drone</span> <span class="o">=</span> <span class="n">RigidMobile</span><span class="p">(</span><span class="n">rel_body_points</span><span class="p">,</span> <span class="n">f</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
+<span class="n">drone</span> <span class="o">=</span> <span class="n">RigidMobile</span><span class="p">(</span><span class="n">rel_body_points</span><span class="p">)</span>
 
 <span class="c1"># rotatin vectors</span>
 
@@ -377,10 +377,10 @@ but this time with a self-rotation of 180 degrees about the z-axis.</p>
 <span class="c1"># as matrices</span>
 
 <span class="c1"># num_anchors x 3 x 4</span>
-<span class="n">anchor_matrices</span> <span class="o">=</span> <span class="n">ivy_mech</span><span class="o">.</span><span class="n">rot_vec_pose_to_mat_pose</span><span class="p">(</span><span class="n">anchor_poses</span><span class="p">,</span> <span class="n">f</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
+<span class="n">anchor_matrices</span> <span class="o">=</span> <span class="n">ivy_mech</span><span class="o">.</span><span class="n">rot_vec_pose_to_mat_pose</span><span class="p">(</span><span class="n">anchor_poses</span><span class="p">)</span>
 
 <span class="c1"># num_samples x 3 x 4</span>
-<span class="n">interpolated_matrices</span> <span class="o">=</span> <span class="n">ivy_mech</span><span class="o">.</span><span class="n">rot_vec_pose_to_mat_pose</span><span class="p">(</span><span class="n">interpolated_poses</span><span class="p">,</span> <span class="n">f</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
+<span class="n">interpolated_matrices</span> <span class="o">=</span> <span class="n">ivy_mech</span><span class="o">.</span><span class="n">rot_vec_pose_to_mat_pose</span><span class="p">(</span><span class="n">interpolated_poses</span><span class="p">)</span>
 
 <span class="c1"># sample drone body</span>
 
@@ -409,17 +409,16 @@ We specify a new set of target joint angles which corresponds with
 a forward reaching motion in the positive x direction.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SimpleManipulator</span><span class="p">(</span><span class="n">Manipulator</span><span class="p">):</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">base_inv_ext_mat</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
-        <span class="n">selivy</span><span class="o">.</span><span class="n">_f</span> <span class="o">=</span> <span class="n">f</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">base_inv_ext_mat</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="n">a_s</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">])</span>
         <span class="n">d_s</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">])</span>
         <span class="n">alpha_s</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">])</span>
         <span class="n">dh_joint_scales</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">2</span><span class="p">,))</span>
         <span class="n">dh_joint_offsets</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mf">0.</span><span class="p">])</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">a_s</span><span class="p">,</span> <span class="n">d_s</span><span class="p">,</span> <span class="n">alpha_s</span><span class="p">,</span> <span class="n">dh_joint_scales</span><span class="p">,</span> <span class="n">dh_joint_offsets</span><span class="p">,</span> <span class="n">base_inv_ext_mat</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">a_s</span><span class="p">,</span> <span class="n">d_s</span><span class="p">,</span> <span class="n">alpha_s</span><span class="p">,</span> <span class="n">dh_joint_scales</span><span class="p">,</span> <span class="n">dh_joint_offsets</span><span class="p">,</span> <span class="n">base_inv_ext_mat</span><span class="p">)</span>
 
 <span class="c1"># create manipulator as ivy manipulator</span>
-<span class="n">manipulator</span> <span class="o">=</span> <span class="n">SimpleManipulator</span><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
+<span class="n">manipulator</span> <span class="o">=</span> <span class="n">SimpleManipulator</span><span class="p">()</span>
 
 <span class="c1"># joint angles</span>
 
