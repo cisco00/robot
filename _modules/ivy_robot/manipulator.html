@@ -78,13 +78,13 @@
               
             
             
-              <p><span class="caption-text">Modules</span></p>
+              <p class="caption"><span class="caption-text">Modules</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../manipulator.html">Manipulator</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../planning.html">Planning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../rigid_mobile.html">Rigid mobile</a></li>
 </ul>
-<p><span class="caption-text">Docs</span></p>
+<p class="caption"><span class="caption-text">Docs</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../ivy"">Ivy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../mech"">Ivy Mech</a></li>
@@ -170,7 +170,7 @@
 <span class="c1"># noinspection PyUnresolvedReferences</span>
 <div class="viewcode-block" id="Manipulator"><a class="viewcode-back" href="../../manipulator.html#ivy_robot.manipulator.Manipulator">[docs]</a><span class="k">class</span> <span class="nc">Manipulator</span><span class="p">:</span>
 
-<div class="viewcode-block" id="Manipulator.__init__"><a class="viewcode-back" href="../../manipulator.html#ivy_robot.manipulator.Manipulator.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a_s</span><span class="p">,</span> <span class="n">d_s</span><span class="p">,</span> <span class="n">alpha_s</span><span class="p">,</span> <span class="n">dh_joint_scales</span><span class="p">,</span> <span class="n">dh_joint_offsets</span><span class="p">,</span> <span class="n">base_inv_ext_mat</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="Manipulator.__init__"><a class="viewcode-back" href="../../manipulator.html#ivy_robot.manipulator.Manipulator.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a_s</span><span class="p">,</span> <span class="n">d_s</span><span class="p">,</span> <span class="n">alpha_s</span><span class="p">,</span> <span class="n">dh_joint_scales</span><span class="p">,</span> <span class="n">dh_joint_offsets</span><span class="p">,</span> <span class="n">base_inv_ext_mat</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Initialize robot manipulator instance</span>
 
@@ -455,7 +455,7 @@
 
 <div class="viewcode-block" id="MicoManipulator"><a class="viewcode-back" href="../../manipulator/MicoManipulator.html#ivy_robot.manipulator.MicoManipulator">[docs]</a><span class="k">class</span> <span class="nc">MicoManipulator</span><span class="p">(</span><span class="n">Manipulator</span><span class="p">):</span>
 
-<div class="viewcode-block" id="MicoManipulator.__init__"><a class="viewcode-back" href="../../manipulator/MicoManipulator.html#ivy_robot.manipulator.MicoManipulator.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">base_inv_ext_mat</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="MicoManipulator.__init__"><a class="viewcode-back" href="../../manipulator/MicoManipulator.html#ivy_robot.manipulator.MicoManipulator.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">base_inv_ext_mat</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Initialize Kinova Mico robot manipulator instance.</span>
 <span class="sd">        Denavit–Hartenberg parameters inferred from KINOVA_MICO_Robotic_arm_user_guide.pdf</span>
@@ -511,7 +511,7 @@
 
 <div class="viewcode-block" id="PandaManipulator"><a class="viewcode-back" href="../../manipulator/PandaManipulator.html#ivy_robot.manipulator.PandaManipulator">[docs]</a><span class="k">class</span> <span class="nc">PandaManipulator</span><span class="p">(</span><span class="n">Manipulator</span><span class="p">):</span>
 
-<div class="viewcode-block" id="PandaManipulator.__init__"><a class="viewcode-back" href="../../manipulator/PandaManipulator.html#ivy_robot.manipulator.PandaManipulator.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">base_inv_ext_mat</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="PandaManipulator.__init__"><a class="viewcode-back" href="../../manipulator/PandaManipulator.html#ivy_robot.manipulator.PandaManipulator.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">base_inv_ext_mat</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Initialize FRANKA EMIKA Panda robot manipulator instance.</span>
 <span class="sd">        Denavit–Hartenberg parameters inferred from FRANKA EMIKA online API.</span>
