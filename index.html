@@ -243,16 +243,16 @@ Click on the icons below for their respective github pages.</p>
 <br/>
 <br/><p><strong>Quick Start</strong></p>
 <p>Ivy robot can be installed like so: <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">ivy-robot</span></code></p>
-<p>To quickly see the different aspects of the library, we suggest you check out the <a class="reference external" href="https://github.com/ivy-dl/robot/tree/master/demos">demos</a>!
+<p>To quickly see the different aspects of the library, we suggest you check out the <a class="reference external" href="https://github.com/ivy-dl/robot/tree/master/ivy_robot_demos">demos</a>!
 We suggest you start by running the script <code class="docutils literal notranslate"><span class="pre">run_through.py</span></code>,
 and read the “Run Through” section below which explains this script.</p>
 <p>For more interactive demos, we suggest you run either
-<code class="docutils literal notranslate"><span class="pre">drone_spline_planning.py</span></code> or <code class="docutils literal notranslate"><span class="pre">manipulator_spline_planning.py</span></code> in the <a class="reference external" href="https://github.com/ivy-dl/robot/tree/master/demos/interactive">interactive</a> demos folder.</p>
+<code class="docutils literal notranslate"><span class="pre">drone_spline_planning.py</span></code> or <code class="docutils literal notranslate"><span class="pre">manipulator_spline_planning.py</span></code> in the <a class="reference external" href="https://github.com/ivy-dl/robot/tree/master/ivy_robot_demos/interactive">interactive</a> demos folder.</p>
 </div>
 <div class="section" id="run-through">
 <h1>Run Through<a class="headerlink" href="#run-through" title="Permalink to this headline">¶</a></h1>
 <p>We run through some of the different parts of the library via a simple ongoing example script.
-The full script is available in the <a class="reference external" href="https://github.com/ivy-dl/robot/tree/master/demos">demos</a> folder, as file <code class="docutils literal notranslate"><span class="pre">run_through.py</span></code>.
+The full script is available in the <a class="reference external" href="https://github.com/ivy-dl/robot/tree/master/ivy_robot_demos">demos</a> folder, as file <code class="docutils literal notranslate"><span class="pre">run_through.py</span></code>.
 First, we select a random backend framework to use for the examples, from the options
 <code class="docutils literal notranslate"><span class="pre">ivy.jax</span></code>, <code class="docutils literal notranslate"><span class="pre">ivy.tensorflow</span></code>, <code class="docutils literal notranslate"><span class="pre">ivy.torch</span></code>, <code class="docutils literal notranslate"><span class="pre">ivy.mxnet</span></code> or <code class="docutils literal notranslate"><span class="pre">ivy.numpy</span></code>,
 and use this to set the ivy backend framework.</p>
@@ -463,7 +463,7 @@ the gradients of the mean sampled SDF and a path length metric can be computed w
 The anhcor points can then be incrementally updated using gradient descent on this loss function.</p>
 <p>We provide two further demo scripts which outline this gradient-based path optimization in a 3D scene.
 Rather than presenting the code here, we show visualizations of the demos.
-The scripts for these demos can be found in the <a class="reference external" href="https://github.com/ivy-dl/robot/tree/master/demos/interactive">interactive</a> demos folder.</p>
+The scripts for these demos can be found in the <a class="reference external" href="https://github.com/ivy-dl/robot/tree/master/ivy_robot_demos/interactive">interactive</a> demos folder.</p>
 <p><strong>RigidMobile Planning</strong></p>
 <p>The first demo uses the <code class="docutils literal notranslate"><span class="pre">RigidMobile</span></code> class to optimzie the motion of a drone to a target pose,
 making use of functions <code class="docutils literal notranslate"><span class="pre">ivy_robot.sample_spline_path</span></code> and <code class="docutils literal notranslate"><span class="pre">ivy_robot.RigidMobile.sample_body</span></code>.</p>
