@@ -501,11 +501,9 @@ Citation
       year={2021}
     }
 
-Documentation Tree
-------------------
-
 
 .. toctree::
+   :hidden:
    :maxdepth: -1
    :caption: Modules
 
@@ -516,6 +514,7 @@ Documentation Tree
 
 
 .. toctree::
+   :hidden:
    :maxdepth: -1
    :caption: Docs
 
